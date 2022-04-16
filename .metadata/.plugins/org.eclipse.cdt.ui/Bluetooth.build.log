@@ -1,0 +1,43 @@
+17:12:05 **** Incremental Build of configuration Debug for project Bluetooth ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/BSP/B-L475E-IOT01A1/stm32l475e_iot01_psensor.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I"C:/f2t2/MyWorkspace/targetMcu/Bluetooth/Drivers/BSP/Components/lps22hb" -I"C:/f2t2/MyWorkspace/targetMcu/Bluetooth/Drivers/BSP/Components/hts221" -I"C:/f2t2/MyWorkspace/targetMcu/Bluetooth/Drivers/BSP/B-L475E-IOT01A1" -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I../BlueNRG_MS/App -I../BlueNRG_MS/Target -I../Drivers/BSP/B-L475E-IOT01A1 -I../Middlewares/ST/BlueNRG-MS/utils -I../Middlewares/ST/BlueNRG-MS/includes -I../Middlewares/ST/BlueNRG-MS/hci/hci_tl_patterns/Basic -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/BSP/B-L475E-IOT01A1/stm32l475e_iot01_psensor.d" -MT"Drivers/BSP/B-L475E-IOT01A1/stm32l475e_iot01_psensor.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/BSP/B-L475E-IOT01A1/stm32l475e_iot01_psensor.o"
+arm-none-eabi-gcc "../Drivers/BSP/B-L475E-IOT01A1/stm32l475e_iot01_tsensor.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I"C:/f2t2/MyWorkspace/targetMcu/Bluetooth/Drivers/BSP/Components/lps22hb" -I"C:/f2t2/MyWorkspace/targetMcu/Bluetooth/Drivers/BSP/Components/hts221" -I"C:/f2t2/MyWorkspace/targetMcu/Bluetooth/Drivers/BSP/B-L475E-IOT01A1" -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I../BlueNRG_MS/App -I../BlueNRG_MS/Target -I../Drivers/BSP/B-L475E-IOT01A1 -I../Middlewares/ST/BlueNRG-MS/utils -I../Middlewares/ST/BlueNRG-MS/includes -I../Middlewares/ST/BlueNRG-MS/hci/hci_tl_patterns/Basic -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/BSP/B-L475E-IOT01A1/stm32l475e_iot01_tsensor.d" -MT"Drivers/BSP/B-L475E-IOT01A1/stm32l475e_iot01_tsensor.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/BSP/B-L475E-IOT01A1/stm32l475e_iot01_tsensor.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I"C:/f2t2/MyWorkspace/targetMcu/Bluetooth/Drivers/BSP/Components/lps22hb" -I"C:/f2t2/MyWorkspace/targetMcu/Bluetooth/Drivers/BSP/Components/hts221" -I"C:/f2t2/MyWorkspace/targetMcu/Bluetooth/Drivers/BSP/B-L475E-IOT01A1" -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I../BlueNRG_MS/App -I../BlueNRG_MS/Target -I../Drivers/BSP/B-L475E-IOT01A1 -I../Middlewares/ST/BlueNRG-MS/utils -I../Middlewares/ST/BlueNRG-MS/includes -I../Middlewares/ST/BlueNRG-MS/hci/hci_tl_patterns/Basic -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Drivers/BSP/B-L475E-IOT01A1/stm32l475e_iot01_psensor.c: In function 'BSP_PSENSOR_Init':
+../Drivers/BSP/B-L475E-IOT01A1/stm32l475e_iot01_psensor.c:64:23: error: 'LPS22HB_I2C_ADDRESS' undeclared (first use in this function); did you mean 'LPS22HB_I2C_MASK'?
+   64 |     Psensor_drv->Init(LPS22HB_I2C_ADDRESS);
+      |                       ^~~~~~~~~~~~~~~~~~~
+      |                       LPS22HB_I2C_MASK
+../Drivers/BSP/B-L475E-IOT01A1/stm32l475e_iot01_psensor.c:64:23: note: each undeclared identifier is reported only once for each function it appears in
+../Drivers/BSP/B-L475E-IOT01A1/stm32l475e_iot01_tsensor.c: In function 'BSP_TSENSOR_Init':
+../Drivers/BSP/B-L475E-IOT01A1/stm32l475e_iot01_tsensor.c:65:21: error: 'TSENSOR_I2C_MASK' undeclared (first use in this function)
+   65 |   tsensor_drv->Init(TSENSOR_I2C_MASK, NULL);
+      |                     ^~~~~~~~~~~~~~~~
+../Drivers/BSP/B-L475E-IOT01A1/stm32l475e_iot01_tsensor.c:65:21: note: each undeclared identifier is reported only once for each function it appears in
+../Drivers/BSP/B-L475E-IOT01A1/stm32l475e_iot01_tsensor.c: In function 'BSP_TSENSOR_ReadTemp':
+../Drivers/BSP/B-L475E-IOT01A1/stm32l475e_iot01_tsensor.c:78:32: error: 'TSENSOR_I2C_MASK' undeclared (first use in this function)
+   78 |   return tsensor_drv->ReadTemp(TSENSOR_I2C_MASK);
+      |                                ^~~~~~~~~~~~~~~~
+../Drivers/BSP/B-L475E-IOT01A1/stm32l475e_iot01_tsensor.c:79:1: warning: control reaches end of non-void function [-Wreturn-type]
+   79 | }
+      | ^
+../Drivers/BSP/B-L475E-IOT01A1/stm32l475e_iot01_psensor.c: In function 'BSP_PSENSOR_ReadPressure':
+../Drivers/BSP/B-L475E-IOT01A1/stm32l475e_iot01_psensor.c:86:36: error: 'LPS22HB_I2C_ADDRESS' undeclared (first use in this function); did you mean 'LPS22HB_I2C_MASK'?
+   86 |   return Psensor_drv->ReadPressure(LPS22HB_I2C_ADDRESS);
+      |                                    ^~~~~~~~~~~~~~~~~~~
+      |                                    LPS22HB_I2C_MASK
+../Drivers/BSP/B-L475E-IOT01A1/stm32l475e_iot01_psensor.c:87:1: warning: control reaches end of non-void function [-Wreturn-type]
+   87 | }
+      | ^
+make: *** [Drivers/BSP/B-L475E-IOT01A1/subdir.mk:28: Drivers/BSP/B-L475E-IOT01A1/stm32l475e_iot01_tsensor.o] Error 1
+make: *** Waiting for unfinished jobs....
+make: *** [Drivers/BSP/B-L475E-IOT01A1/subdir.mk:28: Drivers/BSP/B-L475E-IOT01A1/stm32l475e_iot01_psensor.o] Error 1
+../Core/Src/main.c:29:10: fatal error: stm32l475e_iot01_hsensor.h: No such file or directory
+   29 | #include "stm32l475e_iot01_hsensor.h"
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+
+17:12:07 Build Failed. 9 errors, 2 warnings. (took 2s.1ms)
+

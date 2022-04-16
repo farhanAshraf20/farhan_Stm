@@ -1,0 +1,10 @@
+15:57:58 **** Incremental Build of configuration Debug for project fRtos ****
+make -j8 all 
+arm-none-eabi-size   fRtos.elf 
+   text	   data	    bss	    dec	    hex	filename
+  29444	    124	   7356	  36924	   903c	fRtos.elf
+Finished building: default.size.stdout
+ 
+
+15:57:59 Build Finished. 0 errors, 0 warnings. (took 1s.79ms)
+

@@ -1,0 +1,20 @@
+12:54:54 **** Incremental Build of configuration Debug for project far_free_Rtos ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/stm32l4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I"C:/f2t2/MyWorkspace/targetMcu/far_free_Rtos/thirdparty/FreeRtos/portable/GCC/ARM_CM4F" -I../Core/Inc -I"C:/f2t2/MyWorkspace/targetMcu/far_free_Rtos/thirdparty/FreeRtos" -I"C:/f2t2/MyWorkspace/targetMcu/far_free_Rtos/thirdparty/FreeRtos/include" -I"C:/f2t2/MyWorkspace/targetMcu/far_free_Rtos/thirdparty/FreeRtos/portable" -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32l4xx_it.d" -MT"Core/Src/stm32l4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32l4xx_it.o"
+arm-none-eabi-gcc -o "far_free_Rtos.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\f2t2\MyWorkspace\targetMcu\far_free_Rtos\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="far_free_Rtos.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: far_free_Rtos.elf
+ 
+arm-none-eabi-size   far_free_Rtos.elf 
+arm-none-eabi-objdump -h -S  far_free_Rtos.elf  > "far_free_Rtos.list"
+arm-none-eabi-objcopy  -O binary  far_free_Rtos.elf  "far_free_Rtos.bin"
+   text	   data	    bss	    dec	    hex	filename
+  22028	    128	  18464	  40620	   9eac	far_free_Rtos.elf
+Finished building: default.size.stdout
+ 
+Finished building: far_free_Rtos.bin
+ 
+Finished building: far_free_Rtos.list
+ 
+
+12:54:55 Build Finished. 0 errors, 0 warnings. (took 1s.394ms)
+

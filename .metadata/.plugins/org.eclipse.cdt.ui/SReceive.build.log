@@ -1,0 +1,10 @@
+11:41:54 **** Incremental Build of configuration Debug for project SReceive ****
+make -j8 all 
+arm-none-eabi-size   SReceive.elf 
+   text	   data	    bss	    dec	    hex	filename
+  16200	    100	   1708	  18008	   4658	SReceive.elf
+Finished building: default.size.stdout
+ 
+
+11:41:54 Build Finished. 0 errors, 0 warnings. (took 232ms)
+

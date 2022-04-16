@@ -1,0 +1,27 @@
+17:42:05 **** Build of configuration Debug for project structure_padding ****
+make -j8 all 
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32l475vgtx.d" -MT"Startup/startup_stm32l475vgtx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Startup/startup_stm32l475vgtx.o" "../Startup/startup_stm32l475vgtx.s"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32L4 -DSTM32 -DB_L475E_IOT01A1 -DSTM32L475VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32L4 -DSTM32 -DB_L475E_IOT01A1 -DSTM32L475VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32L4 -DSTM32 -DB_L475E_IOT01A1 -DSTM32L475VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
+../Src/main.c: In function 'main':
+../Src/main.c:37:12: warning: variable 'ptr' set but not used [-Wunused-but-set-variable]
+   37 |   uint8_t *ptr;
+      |            ^~~
+arm-none-eabi-gcc -o "structure_padding.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\f2t2\MyWorkspace\targetMcu\structure_padding\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="structure_padding.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: structure_padding.elf
+ 
+arm-none-eabi-size   structure_padding.elf 
+arm-none-eabi-objdump -h -S  structure_padding.elf  > "structure_padding.list"
+arm-none-eabi-objcopy  -O binary  structure_padding.elf  "structure_padding.bin"
+   text	   data	    bss	    dec	    hex	filename
+    692	      8	   1568	   2268	    8dc	structure_padding.elf
+Finished building: default.size.stdout
+ 
+Finished building: structure_padding.bin
+Finished building: structure_padding.list
+ 
+ 
+
+17:42:06 Build Finished. 0 errors, 1 warnings. (took 1s.30ms)
+
